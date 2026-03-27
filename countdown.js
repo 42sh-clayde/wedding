@@ -1,6 +1,6 @@
 (function () {
-  /** Heure de référence pour le compte à rebours (début de la cérémonie ou moment choisi). */
-  const WEDDING_ISO = "2026-07-17T15:30:00";
+  /** Heure de référence : début de la journée (mairie). Modifiable selon votre préférence. */
+  const WEDDING_ISO = "2026-07-17T10:00:00";
 
   const weddingDate = new Date(WEDDING_ISO);
 
