@@ -6,129 +6,287 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <meta name="theme-color" content="#fbf9f6" />
-    <meta name="description" content="Save the date — Sten & Audhe — 17 juillet 2026" />
-    <title>Sten &amp; Audhe — Mariage</title>
+    <meta name="theme-color" content="#ebe8e0" />
+    <meta
+      name="description"
+      content="Sten et Audhe se marient le 17 juillet 2026 — faire-part, programme et compte à rebours."
+    />
+    <title>Sten &amp; Audhe</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Sten &amp; Audhe" />
+    <meta property="og:title" content="Sten &amp; Audhe — 17 juillet 2026" />
+    <meta
+      property="og:description"
+      content="On se marie — découvrez notre faire-part et le programme du jour J."
+    />
+    <meta property="og:url" content="https://42sh-clayde.github.io/wedding/" />
+    <meta
+      property="og:image"
+      content="https://42sh-clayde.github.io/wedding/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Sten et Audhe — photo officielle du couple"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sten &amp; Audhe — 17 juillet 2026" />
+    <meta
+      name="twitter:description"
+      content="On se marie — découvrez notre faire-part et le programme du jour J."
+    />
+    <meta
+      name="twitter:image"
+      content="https://42sh-clayde.github.io/wedding/og-image.jpg"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,400;0,500;1,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="grain" aria-hidden="true"></div>
+    <div class="ambient" aria-hidden="true">
+      <svg
+        class="ambient__svg"
+        viewBox="0 0 1440 900"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="blob-forest" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#5a8f7e" />
+            <stop offset="100%" stop-color="#3d6b5c" />
+          </linearGradient>
+          <linearGradient id="blob-sage" x1="100%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#7aab9a" />
+            <stop offset="100%" stop-color="#588f7c" />
+          </linearGradient>
+          <linearGradient id="blob-mist" x1="50%" y1="0%" x2="50%" y2="100%">
+            <stop offset="0%" stop-color="#c8ddd4" />
+            <stop offset="100%" stop-color="#a8c8bb" />
+          </linearGradient>
+          <linearGradient id="blob-glow" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#e8d4b0" />
+            <stop offset="100%" stop-color="#d4b896" />
+          </linearGradient>
+          <filter id="blob-blur" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="56" />
+          </filter>
+        </defs>
+        <rect width="1440" height="900" fill="#ebe8e0" />
+        <g class="ambient__blobs" filter="url(#blob-blur)">
+          <ellipse
+            class="ambient__blob ambient__blob--1"
+            cx="1180"
+            cy="140"
+            rx="340"
+            ry="280"
+            fill="url(#blob-forest)"
+          />
+          <ellipse
+            class="ambient__blob ambient__blob--2"
+            cx="180"
+            cy="720"
+            rx="380"
+            ry="300"
+            fill="url(#blob-sage)"
+          />
+          <ellipse
+            class="ambient__blob ambient__blob--3"
+            cx="720"
+            cy="480"
+            rx="420"
+            ry="260"
+            fill="url(#blob-mist)"
+          />
+          <ellipse
+            class="ambient__blob ambient__blob--4"
+            cx="520"
+            cy="120"
+            rx="280"
+            ry="220"
+            fill="url(#blob-glow)"
+          />
+        </g>
+      </svg>
+      <div class="ambient__wash"></div>
+      <div class="ambient__grain"></div>
+    </div>
+
+    <canvas id="celebration" class="celebration" aria-hidden="true"></canvas>
+
     <a class="skip-link" href="#contenu-principal">Aller au contenu</a>
 
     <main id="contenu-principal" class="page">
-      <header class="save-the-date">
-        <div class="monogram" aria-hidden="true">
-          <svg class="monogram__svg" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
-            <circle
-              class="monogram__ring"
-              cx="80"
-              cy="80"
-              r="76"
-              fill="none"
-              stroke-width="1"
-              pathLength="100"
-            />
-            <text
-              class="monogram__letter monogram__letter--s"
-              x="52"
-              y="102"
-              text-anchor="middle"
-            >
-              S
-            </text>
-            <text
-              class="monogram__letter monogram__letter--a"
-              x="108"
-              y="102"
-              text-anchor="middle"
-            >
-              A
-            </text>
-          </svg>
-        </div>
+      <article class="panel panel--hero">
+        <header class="hero">
+          <p class="hero__stamp" data-enter>17 · 07 · 26</p>
+          <p class="hero__welcome" data-enter>On se marie — et on a envie de fêter ça avec vous.</p>
+          <h1 class="hero__names">
+            <span class="hero__name" data-enter>Sten</span>
+            <span class="hero__and" data-enter aria-hidden="true">&amp;</span>
+            <span class="hero__name" data-enter>Audhe</span>
+          </h1>
+          <p class="hero__date" data-enter>Vendredi 17 juillet 2026</p>
+        </header>
 
-        <p class="save-the-date__label">Save the date</p>
-        <h1 class="save-the-date__names">Sten <span class="save-the-date__ampersand">&amp;</span> Audhe</h1>
-        <p class="save-the-date__tagline">Nous nous marions</p>
-        <p class="save-the-date__date">Vendredi 17 juillet 2026</p>
-      </header>
-
-      <section class="section section--countdown" aria-labelledby="countdown-heading">
-        <div class="section__head">
-          <h2 id="countdown-heading" class="section__title">Compte à rebours</h2>
-          <p class="section__subtitle" id="countdown-caption"></p>
-        </div>
-        <div class="countdown__grid" role="timer" aria-live="polite">
-          <div class="countdown__unit">
-            <span class="countdown__value" id="cd-days">00</span>
-            <span class="countdown__label">jours</span>
-          </div>
-          <div class="countdown__unit">
-            <span class="countdown__value" id="cd-hours">00</span>
-            <span class="countdown__label">heures</span>
-          </div>
-          <div class="countdown__unit">
-            <span class="countdown__value" id="cd-minutes">00</span>
-            <span class="countdown__label">minutes</span>
-          </div>
-          <div class="countdown__unit">
-            <span class="countdown__value" id="cd-seconds">00</span>
-            <span class="countdown__label">secondes</span>
-          </div>
-        </div>
-        <p class="countdown__message" id="countdown-message" hidden></p>
-      </section>
-
-      <section class="section section--timeline" aria-labelledby="timeline-heading">
-        <div class="section__head">
-          <h2 id="timeline-heading" class="section__title">La journée</h2>
-          <p class="section__subtitle">
-            Matin à la mairie, après-midi à la coutume, le soir en fête — horaires indicatifs
-          </p>
-        </div>
-        <ol class="timeline">
-          <li class="timeline__item">
-            <span class="timeline__time">Matin · 10h00</span>
-            <div class="timeline__body">
-              <h3 class="timeline__title">Mairie</h3>
-              <p class="timeline__text">
-                Cérémonie civile, échange des consentements devant l’officier d’état civil.
-              </p>
+        <section class="countdown" aria-labelledby="countdown-label" data-enter>
+          <h2 id="countdown-label" class="countdown__label">
+            <span class="visually-hidden">Temps restant avant le </span>
+            <span class="countdown__intro">Encore un peu de patience…</span>
+            <span class="countdown__date" id="countdown-caption">17 juillet 2026</span>
+          </h2>
+          <div class="countdown__grid" role="timer" aria-live="polite">
+            <div class="countdown__unit">
+              <span class="countdown__value" id="cd-days">00</span>
+              <span class="countdown__unit-label">j</span>
             </div>
+            <span class="countdown__colon" aria-hidden="true">:</span>
+            <div class="countdown__unit">
+              <span class="countdown__value" id="cd-hours">00</span>
+              <span class="countdown__unit-label">h</span>
+            </div>
+            <span class="countdown__colon" aria-hidden="true">:</span>
+            <div class="countdown__unit">
+              <span class="countdown__value" id="cd-minutes">00</span>
+              <span class="countdown__unit-label">min</span>
+            </div>
+            <span class="countdown__colon countdown__colon--sec" aria-hidden="true">:</span>
+            <div class="countdown__unit countdown__unit--sec">
+              <span class="countdown__value" id="cd-seconds">00</span>
+              <span class="countdown__unit-label">s</span>
+            </div>
+          </div>
+          <p class="countdown__message" id="countdown-message" hidden></p>
+        </section>
+      </article>
+
+      <section class="panel panel--programme reveal-on-scroll" aria-labelledby="programme-heading">
+        <header class="panel__head">
+          <h2 id="programme-heading" class="panel__title">Programme</h2>
+          <p class="panel__lede">Toute la journée, du « oui » à la piste de danse.</p>
+        </header>
+        <ol class="programme">
+          <li class="programme__entry">
+            <details class="programme__item">
+              <summary class="programme__summary">
+                <time class="programme__time" datetime="2026-07-17T10:00">10h</time>
+                <span class="programme__head">
+                  <span class="programme__name">Mairie</span>
+                  <span class="programme__detail">Cérémonie civile</span>
+                </span>
+                <span class="programme__chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="programme__panel">
+                <div class="programme__panel-inner">
+                  <ul class="programme__steps">
+                <li class="programme__step">
+                  <time datetime="2026-07-17T09:30">9h30</time>
+                  <span>Accueil des invités — parvis</span>
+                </li>
+                <li class="programme__step">
+                  <time datetime="2026-07-17T10:00">10h00</time>
+                  <span>Cérémonie civile — salle des mariages</span>
+                </li>
+                <li class="programme__step">
+                  <time datetime="2026-07-17T10:45">10h45</time>
+                  <span>Photos officielles — sortie mairie</span>
+                </li>
+                <li class="programme__step">
+                  <time datetime="2026-07-17T11:30">11h30</time>
+                  <span>Brunch léger — café voisin</span>
+                </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
           </li>
-          <li class="timeline__item">
-            <span class="timeline__time">Après-midi · 15h00</span>
-            <div class="timeline__body">
-              <h3 class="timeline__title">Mariage à la coutume</h3>
-              <p class="timeline__text">
-                Cérémonie traditionnelle gabonaise : famille, dot et rites selon nos coutumes.
-              </p>
-            </div>
+          <li class="programme__entry">
+            <details class="programme__item">
+              <summary class="programme__summary">
+                <time class="programme__time" datetime="2026-07-17T15:00">15h</time>
+                <span class="programme__head">
+                  <span class="programme__name">Coutume</span>
+                  <span class="programme__detail">Rites traditionnels</span>
+                </span>
+                <span class="programme__chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="programme__panel">
+                <div class="programme__panel-inner">
+                  <ul class="programme__steps">
+                <li class="programme__step">
+                  <time datetime="2026-07-17T14:00">14h00</time>
+                  <span>Installation — cour familiale</span>
+                </li>
+                <li class="programme__step">
+                  <time datetime="2026-07-17T15:00">15h00</time>
+                  <span>Entrée de la mariée — tambours</span>
+                </li>
+                <li class="programme__step">
+                  <time datetime="2026-07-17T16:30">16h30</time>
+                  <span>Échanges de cadeaux — famille élargie</span>
+                </li>
+                <li class="programme__step">
+                  <time datetime="2026-07-17T17:45">17h45</time>
+                  <span>Bénédiction et photos de groupe</span>
+                </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
           </li>
-          <li class="timeline__item">
-            <span class="timeline__time">Soir · 20h30</span>
-            <div class="timeline__body">
-              <h3 class="timeline__title">Soirée</h3>
-              <p class="timeline__text">
-                Célébration, repas et danse pour clôturer la journée ensemble.
-              </p>
-            </div>
+          <li class="programme__entry">
+            <details class="programme__item">
+              <summary class="programme__summary">
+                <time class="programme__time" datetime="2026-07-17T20:30">20h30</time>
+                <span class="programme__head">
+                  <span class="programme__name">Soirée</span>
+                  <span class="programme__detail">Repas et danse</span>
+                </span>
+                <span class="programme__chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="programme__panel">
+                <div class="programme__panel-inner">
+                  <ul class="programme__steps">
+                <li class="programme__step">
+                  <time datetime="2026-07-17T20:00">20h00</time>
+                  <span>Cocktail — terrasse</span>
+                </li>
+                <li class="programme__step">
+                  <time datetime="2026-07-17T20:30">20h30</time>
+                  <span>Entrée en salle — discours des témoins</span>
+                </li>
+                <li class="programme__step">
+                  <time datetime="2026-07-17T22:00">22h00</time>
+                  <span>Ouverture du bal — première danse</span>
+                </li>
+                <li class="programme__step">
+                  <time datetime="2026-07-17T23:30">23h30</time>
+                  <span>Gâteau — puis soirée libre</span>
+                </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
           </li>
         </ol>
       </section>
 
-      <footer class="thanks">
-        <p class="thanks__line">Merci du fond du cœur</p>
-        <p class="thanks__sub">Votre présence à nos côtés compte plus que tout.</p>
-        <p class="thanks__sign">Sten &amp; Audhe</p>
+      <footer class="panel panel--footer reveal-on-scroll">
+        <p class="footer__note">Votre présence fera toute la différence.</p>
+        <p class="footer__sub">On a hâte de vous retrouver pour danser, rire et célébrer.</p>
+        <p class="footer__sign">Avec amour — Sten &amp; Audhe</p>
       </footer>
     </main>
+    <script src="effects.js"></script>
     <script src="countdown.js"></script>
+    <script src="programme.js"></script>
   </body>
 </html>
