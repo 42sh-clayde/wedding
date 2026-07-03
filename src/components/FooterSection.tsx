@@ -17,6 +17,7 @@ export default function FooterSection() {
   return (
     <footer
       ref={ref}
+      id="section-footer"
       className="snap-start relative z-10 flex items-center justify-center px-4"
       style={{
         minHeight: '100dvh',

@@ -208,6 +208,7 @@ export default function TimelineSection() {
 
   return (
     <section
+      id="section-timeline"
       className="snap-start relative z-10 flex justify-center px-4"
       style={{
         minHeight: '100dvh',

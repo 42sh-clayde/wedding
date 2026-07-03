@@ -76,7 +76,7 @@ export default function LieuModal({ onClose }: { onClose: () => void }) {
             </svg>
             <div>
               <p style={{ margin: 0, fontSize: '0.875rem', color: '#1e2a26', lineHeight: 1.5 }}>
-                Gabon
+                Ondo
               </p>
               <p style={{ margin: '0.125rem 0 0', fontSize: '0.8125rem', color: '#4a5c56' }}>
                 À partir de 17h00
