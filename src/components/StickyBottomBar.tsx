@@ -17,7 +17,7 @@ const spring = { type: 'spring', stiffness: 380, damping: 36 } as const
 export default function StickyBottomBar() {
   const [modal, setModal] = useState<'confirm' | 'lieu' | null>(null)
   const [entered, setEntered] = useState(false)
-  const [scrolling, setScrolling] = useState(false)
+  const [onTimeline, setOnTimeline] = useState(false)
   const scrollTimer = useRef<ReturnType<typeof setTimeout>>()
 
   useEffect(() => {
@@ -26,21 +26,18 @@ export default function StickyBottomBar() {
   }, [])
 
   useEffect(() => {
-    const container = document.querySelector('.snap-scroll')
-    if (!container) return
-    function onScroll() {
-      setScrolling(true)
-      clearTimeout(scrollTimer.current)
-      scrollTimer.current = setTimeout(() => setScrolling(false), 700)
-    }
-    container.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      container.removeEventListener('scroll', onScroll)
-      clearTimeout(scrollTimer.current)
-    }
+    const root = document.querySelector('.snap-scroll')
+    const el = document.getElementById('section-timeline')
+    if (!root || !el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => setOnTimeline(entry.isIntersecting),
+      { root, threshold: 0.4 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
   }, [])
 
-  const hidden = !entered || scrolling
+  const hidden = !entered || onTimeline
 
   return (
     <>
