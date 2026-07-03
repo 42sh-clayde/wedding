@@ -34,7 +34,7 @@ const TIMELINE: TimelineItem[] = [
   },
   {
     time: '17h00',
-    label: 'Arrivée des invités sur le site de la soirée à ONDO',
+    label: 'Arrivée des invités à la salle de fête Christ Isnel',
   },
 ]
 
