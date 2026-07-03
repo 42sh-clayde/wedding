@@ -61,7 +61,7 @@ export default function LieuModal({ onClose }: { onClose: () => void }) {
 
         {/* Infos lieu */}
         <div style={{ padding: '1.25rem 1.5rem 0' }}>
-          <p style={{ margin: 0, fontSize: '0.6875rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6a9485' }}>
+          <p style={{ margin: 0, fontSize: '0.6875rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2f5449' }}>
             Lieu de la soirée
           </p>
           <h2 style={{ margin: '0.3rem 0 0', fontFamily: 'var(--font-display), Georgia, serif', fontWeight: 400, fontSize: '1.375rem', color: '#1e2a26' }}>

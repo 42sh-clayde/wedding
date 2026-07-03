@@ -85,7 +85,7 @@ export default function HeroSection() {
         <motion.p
           {...stagger(0)}
           className="text-center text-xs font-medium tracking-[.28em] mb-4"
-          style={{ color: 'var(--gold)' }}
+          style={{ color: 'var(--ink-soft)' }}
         >
           17 · 07 · 26
         </motion.p>
@@ -140,7 +140,7 @@ export default function HeroSection() {
         <motion.p
           {...stagger(5)}
           className="text-center font-medium tracking-[.04em] mt-5"
-          style={{ fontSize: '0.9375rem', color: 'var(--green)' }}
+          style={{ fontSize: '0.9375rem', color: 'var(--green-deep)' }}
         >
           Vendredi 17 juillet 2026
         </motion.p>
@@ -155,7 +155,7 @@ export default function HeroSection() {
           <div className="flex flex-col items-center gap-1 mb-4 text-center">
             <p
               className="font-display italic"
-              style={{ fontSize: '0.9375rem', color: 'var(--gold)' }}
+              style={{ fontSize: '0.9375rem', color: 'var(--ink-soft)' }}
               id="countdown-label"
             >
               {time.isOver ? "C'est le grand jour !" : introText(time.days)}
@@ -168,7 +168,7 @@ export default function HeroSection() {
           {time.isOver ? (
             <p
               className="text-center font-display italic mt-2"
-              style={{ color: 'var(--green-soft)', fontSize: '1.125rem', lineHeight: 1.4 }}
+              style={{ color: 'var(--ink-soft)', fontSize: '1.125rem', lineHeight: 1.4 }}
             >
               On est prêts à vous accueillir.
             </p>

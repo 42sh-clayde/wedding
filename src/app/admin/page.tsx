@@ -40,7 +40,7 @@ export default async function AdminPage({
 
         {/* Header */}
         <div style={{ marginBottom: '2rem' }}>
-          <p style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#6a9485', margin: 0 }}>Admin</p>
+          <p style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#2f5449', margin: 0 }}>Admin</p>
           <h1 style={{ margin: '0.25rem 0 0', fontFamily: 'Georgia, serif', fontSize: '1.75rem', fontWeight: 400 }}>
             Sten &amp; Audhe — 17 juillet 2026
           </h1>
@@ -57,7 +57,7 @@ export default async function AdminPage({
         {/* Guest table */}
         <div style={{ background: 'rgba(252,249,244,0.9)', border: '1px solid rgba(184,149,106,.2)', borderRadius: '16px', overflow: 'hidden' }}>
           <div style={{ padding: '1rem 1.25rem', borderBottom: '1px solid rgba(74,114,100,.1)' }}>
-            <p style={{ margin: 0, fontSize: '0.7rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6a9485' }}>
+            <p style={{ margin: 0, fontSize: '0.7rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2f5449' }}>
               Invités confirmés
             </p>
           </div>
@@ -82,7 +82,7 @@ export default async function AdminPage({
                       <td style={{ padding: '0.625rem 1.25rem', fontFamily: 'Georgia, serif' }}>{r.prenom}</td>
                       <td style={{ padding: '0.625rem 1.25rem', fontFamily: 'Georgia, serif' }}>{r.nom}</td>
                       <td style={{ padding: '0.625rem 1.25rem', color: '#4a5c56' }}>{r.telephone}</td>
-                      <td style={{ padding: '0.625rem 1.25rem', color: '#6a9485', fontSize: '0.8rem', whiteSpace: 'nowrap' }}>{fmt(r.createdAt)}</td>
+                      <td style={{ padding: '0.625rem 1.25rem', color: '#2f5449', fontSize: '0.8rem', whiteSpace: 'nowrap' }}>{fmt(r.createdAt)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -91,7 +91,7 @@ export default async function AdminPage({
           )}
         </div>
 
-        <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: '#6a9485', textAlign: 'center' }}>
+        <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: '#2f5449', textAlign: 'center' }}>
           Actualisez la page pour voir les nouvelles confirmations.
         </p>
       </div>
@@ -107,7 +107,7 @@ function StatCard({ label, value, sub }: { label: string; value: string; sub?: s
       borderRadius: '14px',
       padding: '1rem 1.25rem',
     }}>
-      <p style={{ margin: 0, fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6a9485' }}>{label}</p>
+      <p style={{ margin: 0, fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2f5449' }}>{label}</p>
       <p style={{ margin: '0.35rem 0 0', fontSize: '2rem', fontFamily: 'Georgia, serif', fontWeight: 400, color: '#2f5449', lineHeight: 1 }}>{value}</p>
       {sub && <p style={{ margin: '0.25rem 0 0', fontSize: '0.7rem', color: '#4a5c56' }}>{sub}</p>}
     </div>

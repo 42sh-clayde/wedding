@@ -79,7 +79,7 @@ export default function ConfirmModal({ onClose }: { onClose: () => void }) {
         </div>
 
         <div style={{ padding: '1.25rem 1.5rem 0' }}>
-          <p style={{ margin: 0, fontSize: '0.6875rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6a9485' }}>
+          <p style={{ margin: 0, fontSize: '0.6875rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2f5449' }}>
             Confirmer ma présence
           </p>
           <p style={{ margin: '0.3rem 0 0', fontFamily: 'var(--font-display), Georgia, serif', fontSize: '1.125rem', fontStyle: 'italic', color: '#1e2a26' }}>

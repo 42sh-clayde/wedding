@@ -126,7 +126,7 @@ function TimelineStep({
           >
             <time
               className="block font-body font-medium tracking-[.03em]"
-              style={{ fontSize: '0.75rem', color: 'var(--gold)', fontVariantNumeric: 'tabular-nums' }}
+              style={{ fontSize: '0.75rem', color: 'var(--green-deep)', fontVariantNumeric: 'tabular-nums' }}
             >
               {item.time}
             </time>
@@ -152,7 +152,7 @@ function TimelineStep({
                 <NoteIcon />
                 <p
                   className="font-display italic leading-relaxed"
-                  style={{ fontSize: '0.8125rem', color: 'var(--green-soft)', margin: 0 }}
+                  style={{ fontSize: '0.8125rem', color: 'var(--ink-soft)', margin: 0 }}
                 >
                   {item.note}
                 </p>
@@ -164,7 +164,7 @@ function TimelineStep({
           <div style={{ paddingTop: '2px' }}>
             <time
               className="block font-body font-medium tracking-[.03em]"
-              style={{ fontSize: '0.75rem', color: 'var(--gold)', fontVariantNumeric: 'tabular-nums' }}
+              style={{ fontSize: '0.75rem', color: 'var(--green-deep)', fontVariantNumeric: 'tabular-nums' }}
             >
               {item.time}
             </time>
@@ -237,7 +237,7 @@ export default function TimelineSection() {
               fontWeight: 500,
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: 'var(--green-soft)',
+              color: 'var(--green-deep)',
             }}
             id="chronogramme-heading"
           >
