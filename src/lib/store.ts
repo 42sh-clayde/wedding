@@ -10,12 +10,10 @@ export interface RSVP {
 
 export async function addRSVP(data: Pick<RSVP, 'prenom' | 'nom' | 'telephone'>): Promise<RSVP> {
   const rsvp: RSVP = { id: crypto.randomUUID(), ...data, createdAt: new Date().toISOString() }
-  try {
-    await put(`wedding/rsvps/${rsvp.id}.json`, JSON.stringify(rsvp), {
-      access: 'public',
-      addRandomSuffix: false,
-    })
-  } catch {}
+  await put(`wedding/rsvps/${rsvp.id}.json`, JSON.stringify(rsvp), {
+    access: 'public',
+    addRandomSuffix: false,
+  })
   return rsvp
 }
 

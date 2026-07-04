@@ -17,7 +17,8 @@ export async function POST(req: NextRequest) {
     })
 
     return NextResponse.json({ ok: true, rsvp })
-  } catch {
+  } catch (err) {
+    console.error('[RSVP]', err)
     return NextResponse.json({ error: 'Erreur serveur.' }, { status: 500 })
   }
 }
