@@ -1,3 +1,5 @@
+import { put, list } from '@vercel/blob'
+
 export interface RSVP {
   id: string
   prenom: string
@@ -6,36 +8,26 @@ export interface RSVP {
   createdAt: string
 }
 
-const RSVP_KEY = 'wedding:rsvp'
-const ANALYTICS_KEY = 'wedding:analytics'
-
-async function getKV() {
-  const { kv } = await import('@vercel/kv')
-  return kv
-}
-
-export async function addRSVP(
-  data: Pick<RSVP, 'prenom' | 'nom' | 'telephone'>
-): Promise<RSVP> {
-  const rsvp: RSVP = {
-    id: crypto.randomUUID(),
-    ...data,
-    createdAt: new Date().toISOString(),
-  }
+export async function addRSVP(data: Pick<RSVP, 'prenom' | 'nom' | 'telephone'>): Promise<RSVP> {
+  const rsvp: RSVP = { id: crypto.randomUUID(), ...data, createdAt: new Date().toISOString() }
   try {
-    const kv = await getKV()
-    await kv.lpush(RSVP_KEY, rsvp)
-  } catch {
-    /* KV non configuré en local — données non persistées */
-  }
+    await put(`wedding/rsvps/${rsvp.id}.json`, JSON.stringify(rsvp), {
+      access: 'public',
+      addRandomSuffix: false,
+    })
+  } catch {}
   return rsvp
 }
 
 export async function getRSVPs(): Promise<RSVP[]> {
   try {
-    const kv = await getKV()
-    const items = await kv.lrange<RSVP>(RSVP_KEY, 0, -1)
-    return items ?? []
+    const { blobs } = await list({ prefix: 'wedding/rsvps/' })
+    const results = await Promise.all(
+      blobs.map(b => fetch(b.url).then(r => r.json() as Promise<RSVP>).catch(() => null))
+    )
+    return (results.filter(Boolean) as RSVP[]).sort(
+      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    )
   } catch {
     return []
   }
@@ -43,18 +35,24 @@ export async function getRSVPs(): Promise<RSVP[]> {
 
 export async function trackEvent(event: string): Promise<void> {
   try {
-    const kv = await getKV()
-    await kv.hincrby(ANALYTICS_KEY, event, 1)
-  } catch {
-    /* silent */
-  }
+    const { blobs } = await list({ prefix: 'wedding/analytics.json' })
+    let analytics: Record<string, number> = {}
+    if (blobs.length > 0) {
+      analytics = await fetch(blobs[0].url).then(r => r.json()).catch(() => ({}))
+    }
+    analytics[event] = (analytics[event] ?? 0) + 1
+    await put('wedding/analytics.json', JSON.stringify(analytics), {
+      access: 'public',
+      addRandomSuffix: false,
+    })
+  } catch {}
 }
 
 export async function getAnalytics(): Promise<Record<string, number>> {
   try {
-    const kv = await getKV()
-    const data = await kv.hgetall<Record<string, number>>(ANALYTICS_KEY)
-    return data ?? {}
+    const { blobs } = await list({ prefix: 'wedding/analytics.json' })
+    if (blobs.length === 0) return {}
+    return await fetch(blobs[0].url).then(r => r.json()).catch(() => ({}))
   } catch {
     return {}
   }
